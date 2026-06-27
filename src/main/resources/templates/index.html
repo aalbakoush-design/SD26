@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org" lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SD26 Encoder - Secure Encoding &amp; Decoding</title>
+    <style>
+        * { box-sizing: border-box; margin: 0; padding: 0; }
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background: linear-gradient(135deg, #0f0c29, #302b63, #24243e);
+            min-height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            padding: 20px;
+        }
+        .container {
+            background: rgba(255, 255, 255, 0.95);
+            border-radius: 16px;
+            box-shadow: 0 20px 60px rgba(0, 0, 0, 0.5);
+            padding: 40px;
+            max-width: 700px;
+            width: 100%;
+        }
+        h1 { color: #302b63; font-size: 28px; margin-bottom: 6px; text-align: center; }
+        .subtitle { color: #666; text-align: center; margin-bottom: 30px; font-size: 14px; }
+        .tabs { display: flex; gap: 4px; margin-bottom: 24px; background: #eee; border-radius: 10px; padding: 4px; }
+        .tab-btn { flex:1; padding:12px; border:none; background:transparent; cursor:pointer; font-size:15px; font-weight:600; border-radius:8px; transition:all .3s; color:#555; }
+        .tab-btn.active { background:#302b63; color:white; }
+        .tab-btn:hover:not(.active) { background:#ddd; }
+        .tab-content { display:none; }
+        .tab-content.active { display:block; }
+        label { display:block; margin-bottom:8px; font-weight:600; color:#333; font-size:14px; }
+        textarea, select {
+            width:100%; padding:14px; border:2px solid #ddd; border-radius:10px;
+            font-size:15px; transition:border-color .3s; font-family:'Consolas','Courier New',monospace;
+        }
+        textarea:focus, select:focus { outline:none; border-color:#302b63; }
+        textarea { min-height:120px; resize:vertical; }
+        select { background:white; cursor:pointer; font-family:'Segoe UI',sans-serif; }
+        .btn {
+            width:100%; padding:16px; border:none; border-radius:10px;
+            font-size:16px; font-weight:700; cursor:pointer; transition:transform .2s,box-shadow .2s; margin-top:16px;
+        }
+        .btn:hover { transform:translateY(-2px); box-shadow:0 8px 25px rgba(48,43,99,0.3); }
+        .btn-encode { background:linear-gradient(135deg,#302b63,#24243e); color:white; }
+        .btn-decode { background:linear-gradient(135deg,#11998e,#38ef7d); color:white; }
+        .result-box { margin-top:20px; padding:18px; border-radius:10px; background:#f8f9fa; border-left:4px solid #302b63; }
+        .result-box h3 { color:#302b63; margin-bottom:8px; font-size:14px; text-transform:uppercase; letter-spacing:1px; }
+        .result-box pre { white-space:pre-wrap; word-break:break-all; font-family:'Consolas','Courier New',monospace; font-size:14px; color:#333; background:#fff; padding:12px; border-radius:6px; border:1px solid #e0e0e0; }
+        .error-box { margin-top:20px; padding:16px; border-radius:10px; background:#fff5f5; border-left:4px solid #e53e3e; color:#c53030; }
+        .error-box h3 { font-size:14px; text-transform:uppercase; letter-spacing:1px; margin-bottom:6px; }
+        .info-text { color:#888; font-size:12px; text-align:center; margin-top:24px; border-top:1px solid #eee; padding-top:16px; }
+        @media (max-width:480px) { .container { padding:24px; } h1 { font-size:22px; } }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>🔐 SD26 Encoder</h1>
+        <p class="subtitle">Secure Hex &amp; Base64 Encoding / Decoding</p>
+
+        <div class="tabs">
+            <button class="tab-btn active" id="tabEncode" onclick="switchTab('encode')">Encode</button>
+            <button class="tab-btn" id="tabDecode" onclick="switchTab('decode')">Decode</button>
+        </div>
+
+        <!-- Encode Tab -->
+        <div class="tab-content active" id="encodeTab">
+            <form th:action="@{/encode}" method="post">
+                <label for="encodeInput">Text to Encode</label>
+                <textarea id="encodeInput" name="input" placeholder="Enter text to encode..." required
+                th:text="${input}"></textarea>
+
+                <label for="encodeType" style="margin-top:16px;">Encoding Type</label>
+                <select id="encodeType" name="type">
+                    <option value="hex">Hex (Hexadecimal)</option>
+                    <option value="base64">Base64</option>
+                </select>
+
+                <button type="submit" class="btn btn-encode">⬆ Encode</button>
+            </form>
+
+            <div th:if="${operation == 'encode' and result != null}" class="result-box">
+                <h3>Encoded Result</h3>
+                <pre th:text="${result}"></pre>
+            </div>
+        </div>
+
+        <!-- Decode Tab -->
+        <div class="tab-content" id="decodeTab">
+            <form th:action="@{/decode}" method="post">
+                <label for="decodeInput">Text to Decode</label>
+                <textarea id="decodeInput" name="input" placeholder="Enter hex or base64 text to decode..." required
+                th:text="${input}"></textarea>
+
+                <label for="decodeType" style="margin-top:16px;">Decoding Type</label>
+                <select id="decodeType" name="type">
+                    <option value="hex">Hex (Hexadecimal)</option>
+                    <option value="base64">Base64</option>
+                </select>
+
+                <button type="submit" class="btn btn-decode">⬇ Decode</button>
+            </form>
+
+            <div th:if="${operation == 'decode' and result != null}" class="result-box">
+                <h3>Decoded Result</h3>
+                <pre th:text="${result}"></pre>
+            </div>
+        </div>
+
+        <!-- Error Display -->
+        <div th:if="${error}" class="error-box">
+            <h3>Error</h3>
+            <p th:text="${error}"></p>
+        </div>
+
+        <p class="info-text">Powered by Apache Commons Codec • Secure by Design</p>
+    </div>
+
+    <script>
+        function switchTab(tab) {
+            document.querySelectorAll('.tab-content').forEach(el => el.classList.remove('active'));
+            document.querySelectorAll('.tab-btn').forEach(el => el.classList.remove('active'));
+            document.getElementById(tab + 'Tab').classList.add('active');
+            document.getElementById('tab' + tab.charAt(0).toUpperCase() + tab.slice(1)).classList.add('active');
+        }
+    </script>
+</body>
+</html>

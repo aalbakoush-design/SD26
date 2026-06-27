@@ -1,0 +1,41 @@
+# ====================================================
+# SD26 Encoder - Git Ignore File
+# ====================================================
+
+# Maven build output
+target/
+*.class
+*.jar
+*.war
+
+# IDE files
+.idea/
+*.iml
+.vscode/
+*.swp
+*.swo
+*~
+
+# Eclipse
+.project
+.classpath
+.settings/
+
+# OS files
+Thumbs.db
+.DS_Store
+Desktop.ini
+
+# Logs
+*.log
+
+# Docker
+docker-compose*.yml
+.env
+
+# JML output
+jmllog/
+*.jml
+
+# JMH output
+jmh-result/

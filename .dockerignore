@@ -1,0 +1,14 @@
+# ====================================================
+# SD26 Encoder - Docker Ignore File
+# ====================================================
+
+target/
+.idea/
+*.iml
+.vscode/
+.git/
+.gitignore
+*.md
+*.log
+.DS_Store
+Thumbs.db
