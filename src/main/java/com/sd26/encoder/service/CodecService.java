@@ -18,13 +18,20 @@ import java.nio.charset.StandardCharsets;
 @Service
 public class CodecService {
 
-    /**
+        /**
      * Encodes a plain text string into a hexadecimal string.
      *
      * @param input the plain text to encode (must not be null)
      * @return the hexadecimal encoded string
      * @throws IllegalArgumentException if input is null
      */
+    //@ public normal_behavior
+    //@   requires input != null;
+    //@   ensures \result != null;
+    //@ also
+    //@ public exceptional_behavior
+    //@   requires input == null;
+    //@   signals_only IllegalArgumentException;
     public String encodeHex(String input) {
         if (input == null) {
             throw new IllegalArgumentException("Input must not be null");
@@ -40,6 +47,13 @@ public class CodecService {
      * @return the decoded plain text string
      * @throws IllegalArgumentException if hexInput is null or invalid hex data
      */
+    //@ public normal_behavior
+    //@   requires hexInput != null;
+    //@   ensures \result != null;
+    //@ also
+    //@ public exceptional_behavior
+    //@   requires hexInput == null;
+    //@   signals_only IllegalArgumentException;
     public String decodeHex(String hexInput) {
         if (hexInput == null) {
             throw new IllegalArgumentException("Hex input must not be null");
@@ -59,6 +73,13 @@ public class CodecService {
      * @return the Base64 encoded string
      * @throws IllegalArgumentException if input is null
      */
+    //@ public normal_behavior
+    //@   requires input != null;
+    //@   ensures \result != null;
+    //@ also
+    //@ public exceptional_behavior
+    //@   requires input == null;
+    //@   signals_only IllegalArgumentException;
     public String encodeBase64(String input) {
         if (input == null) {
             throw new IllegalArgumentException("Input must not be null");
@@ -74,6 +95,13 @@ public class CodecService {
      * @return the decoded plain text string
      * @throws IllegalArgumentException if base64Input is null or invalid Base64 data
      */
+    //@ public normal_behavior
+    //@   requires base64Input != null;
+    //@   ensures \result != null;
+    //@ also
+    //@ public exceptional_behavior
+    //@   requires base64Input == null;
+    //@   signals_only IllegalArgumentException;
     public String decodeBase64(String base64Input) {
         if (base64Input == null) {
             throw new IllegalArgumentException("Base64 input must not be null");
