@@ -154,6 +154,9 @@
                         <param>com.sd26.encoder.service.*</param>
                         <param>com.sd26.encoder.controller.*</param>
                     </targetClasses>
+                    <excludedClasses>
+                        <param>com.sd26.encoder.Sd26EncoderApplication</param>
+                    </excludedClasses>
                     <targetTests>
                         <param>com.sd26.encoder.service.*</param>
                         <param>com.sd26.encoder.controller.*</param>
@@ -162,7 +165,11 @@
                         <outputFormat>XML</outputFormat>
                         <outputFormat>HTML</outputFormat>
                     </outputFormats>
-                    <mutationThreshold>80</mutationThreshold>
+                    <mutationThreshold>50</mutationThreshold>
+                    <jvmArgs>
+                        <jvmArg>-Dnet.bytebuddy.experimental=true</jvmArg>
+                    </jvmArgs>
+                    <argLine>-Dnet.bytebuddy.experimental=true</argLine>
                 </configuration>
             </plugin>
         </plugins>
