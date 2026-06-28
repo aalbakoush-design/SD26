@@ -11,7 +11,8 @@ COPY pom.xml ./
 COPY src ./src
 
 # Build the application JAR (skip tests for Docker build speed)
-RUN apk add --no-cache maven && \
+RUN mkdir -p /app && \
+    apk add --no-cache maven && \
     mvn clean package -DskipTests -Djacoco.skip=true -q && \
     mv target/sd26-encoder.jar /app/sd26-encoder.jar
 
