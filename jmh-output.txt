@@ -1,0 +1,419 @@
+[INFO] Scanning for projects...
+[INFO] 
+[INFO] -----------------------< com.sd26:sd26-encoder >------------------------
+[INFO] Building SD26 Encoder Web Application 1.0.0
+[INFO]   from pom.xml
+[INFO] --------------------------------[ jar ]---------------------------------
+[INFO] 
+[INFO] --- exec:3.6.3:java (default-cli) @ sd26-encoder ---
+WARNING: A terminally deprecated method in sun.misc.Unsafe has been called
+WARNING: sun.misc.Unsafe::objectFieldOffset has been called by org.openjdk.jmh.util.Utils (file:/C:/Users/HP/.m2/repository/org/openjdk/jmh/jmh-core/1.37/jmh-core-1.37.jar)
+WARNING: Please consider reporting this to the maintainers of class org.openjdk.jmh.util.Utils
+WARNING: sun.misc.Unsafe::objectFieldOffset will be removed in a future release
+# JMH version: 1.37
+# VM version: JDK 25.0.1, OpenJDK 64-Bit Server VM, 25.0.1+8-LTS
+# VM invoker: C:\Program Files\Eclipse Adoptium\jdk-25.0.1.8-hotspot\bin\java.exe
+# VM options: --enable-native-access=ALL-UNNAMED -Dclassworlds.conf=C:\Users\HP\AppData\Roaming\Code\User\globalStorage\pleiades.java-extension-pack-jdk\maven\latest\bin\m2.conf -Dmaven.home=C:\Users\HP\AppData\Roaming\Code\User\globalStorage\pleiades.java-extension-pack-jdk\maven\latest -Dlibrary.jansi.path=C:\Users\HP\AppData\Roaming\Code\User\globalStorage\pleiades.java-extension-pack-jdk\maven\latest\lib\jansi-native -Dmaven.multiModuleProjectDirectory=C:\Users\HP\Desktop\UNISA\SD\SD26
+# Blackhole mode: compiler (auto-detected, use -Djmh.blackhole.autoDetect=false to disable)
+# Warmup: 3 iterations, 1 s each
+# Measurement: 5 iterations, 1 s each
+# Timeout: 10 min per iteration
+# Threads: 1 thread, will synchronize iterations
+# Benchmark mode: Throughput, ops/time
+# Benchmark: com.sd26.encoder.benchmark.CodecBenchmark.decodeBase64_largeInput
+
+# Run progress: 0,00% complete, ETA 00:03:12
+# Fork: N/A, test runs in the host VM
+# *** WARNING: Non-forked runs may silently omit JVM options, mess up profilers, disable compiler hints, etc. ***
+# *** WARNING: Use non-forked runs only for debugging purposes, not for actual performance runs. ***
+# Warmup Iteration   1: 9,611 ops/ms
+# Warmup Iteration   2: 11,132 ops/ms
+# Warmup Iteration   3: 11,021 ops/ms
+Iteration   1: 7,430 ops/ms
+Iteration   2: 11,594 ops/ms
+Iteration   3: 11,244 ops/ms
+Iteration   4: 9,642 ops/ms
+Iteration   5: 11,010 ops/ms
+
+Result "com.sd26.encoder.benchmark.CodecBenchmark.decodeBase64_largeInput":
+  10,184 ±(99.9%) 6,577 ops/ms [Average]
+  (min, avg, max) = (7,430, 10,184, 11,594), stdev = 1,708
+  CI (99.9%): [3,607, 16,761] (assumes normal distribution)
+
+
+# JMH version: 1.37
+# VM version: JDK 25.0.1, OpenJDK 64-Bit Server VM, 25.0.1+8-LTS
+# VM invoker: C:\Program Files\Eclipse Adoptium\jdk-25.0.1.8-hotspot\bin\java.exe
+# VM options: --enable-native-access=ALL-UNNAMED -Dclassworlds.conf=C:\Users\HP\AppData\Roaming\Code\User\globalStorage\pleiades.java-extension-pack-jdk\maven\latest\bin\m2.conf -Dmaven.home=C:\Users\HP\AppData\Roaming\Code\User\globalStorage\pleiades.java-extension-pack-jdk\maven\latest -Dlibrary.jansi.path=C:\Users\HP\AppData\Roaming\Code\User\globalStorage\pleiades.java-extension-pack-jdk\maven\latest\lib\jansi-native -Dmaven.multiModuleProjectDirectory=C:\Users\HP\Desktop\UNISA\SD\SD26
+# Blackhole mode: compiler (auto-detected, use -Djmh.blackhole.autoDetect=false to disable)
+# Warmup: 3 iterations, 1 s each
+# Measurement: 5 iterations, 1 s each
+# Timeout: 10 min per iteration
+# Threads: 1 thread, will synchronize iterations
+# Benchmark mode: Throughput, ops/time
+# Benchmark: com.sd26.encoder.benchmark.CodecBenchmark.decodeBase64_mediumInput
+
+# Run progress: 4,17% complete, ETA 00:03:06
+# Fork: N/A, test runs in the host VM
+# *** WARNING: Non-forked runs may silently omit JVM options, mess up profilers, disable compiler hints, etc. ***
+# *** WARNING: Use non-forked runs only for debugging purposes, not for actual performance runs. ***
+# Warmup Iteration   1: 388,657 ops/ms
+# Warmup Iteration   2: 444,990 ops/ms
+# Warmup Iteration   3: 374,159 ops/ms
+Iteration   1: 190,402 ops/ms
+Iteration   2: 168,517 ops/ms
+Iteration   3: 109,421 ops/ms
+Iteration   4: 193,582 ops/ms
+Iteration   5: 318,973 ops/ms
+
+Result "com.sd26.encoder.benchmark.CodecBenchmark.decodeBase64_mediumInput":
+  196,179 ±(99.9%) 294,584 ops/ms [Average]
+  (min, avg, max) = (109,421, 196,179, 318,973), stdev = 76,503
+  CI (99.9%): [≈ 0, 490,763] (assumes normal distribution)
+
+
+# JMH version: 1.37
+# VM version: JDK 25.0.1, OpenJDK 64-Bit Server VM, 25.0.1+8-LTS
+# VM invoker: C:\Program Files\Eclipse Adoptium\jdk-25.0.1.8-hotspot\bin\java.exe
+# VM options: --enable-native-access=ALL-UNNAMED -Dclassworlds.conf=C:\Users\HP\AppData\Roaming\Code\User\globalStorage\pleiades.java-extension-pack-jdk\maven\latest\bin\m2.conf -Dmaven.home=C:\Users\HP\AppData\Roaming\Code\User\globalStorage\pleiades.java-extension-pack-jdk\maven\latest -Dlibrary.jansi.path=C:\Users\HP\AppData\Roaming\Code\User\globalStorage\pleiades.java-extension-pack-jdk\maven\latest\lib\jansi-native -Dmaven.multiModuleProjectDirectory=C:\Users\HP\Desktop\UNISA\SD\SD26
+# Blackhole mode: compiler (auto-detected, use -Djmh.blackhole.autoDetect=false to disable)
+# Warmup: 3 iterations, 1 s each
+# Measurement: 5 iterations, 1 s each
+# Timeout: 10 min per iteration
+# Threads: 1 thread, will synchronize iterations
+# Benchmark mode: Throughput, ops/time
+# Benchmark: com.sd26.encoder.benchmark.CodecBenchmark.decodeBase64_smallInput
+
+# Run progress: 8,33% complete, ETA 00:02:57
+# Fork: N/A, test runs in the host VM
+# *** WARNING: Non-forked runs may silently omit JVM options, mess up profilers, disable compiler hints, etc. ***
+# *** WARNING: Use non-forked runs only for debugging purposes, not for actual performance runs. ***
+# Warmup Iteration   1: 1059,371 ops/ms
+# Warmup Iteration   2: 1184,481 ops/ms
+# Warmup Iteration   3: 1052,049 ops/ms
+Iteration   1: 945,046 ops/ms
+Iteration   2: 1088,687 ops/ms
+Iteration   3: 962,634 ops/ms
+Iteration   4: 962,398 ops/ms
+Iteration   5: 888,232 ops/ms
+
+Result "com.sd26.encoder.benchmark.CodecBenchmark.decodeBase64_smallInput":
+  969,399 ±(99.9%) 282,344 ops/ms [Average]
+  (min, avg, max) = (888,232, 969,399, 1088,687), stdev = 73,324
+  CI (99.9%): [687,056, 1251,743] (assumes normal distribution)
+
+
+# JMH version: 1.37
+# VM version: JDK 25.0.1, OpenJDK 64-Bit Server VM, 25.0.1+8-LTS
+# VM invoker: C:\Program Files\Eclipse Adoptium\jdk-25.0.1.8-hotspot\bin\java.exe
+# VM options: --enable-native-access=ALL-UNNAMED -Dclassworlds.conf=C:\Users\HP\AppData\Roaming\Code\User\globalStorage\pleiades.java-extension-pack-jdk\maven\latest\bin\m2.conf -Dmaven.home=C:\Users\HP\AppData\Roaming\Code\User\globalStorage\pleiades.java-extension-pack-jdk\maven\latest -Dlibrary.jansi.path=C:\Users\HP\AppData\Roaming\Code\User\globalStorage\pleiades.java-extension-pack-jdk\maven\latest\lib\jansi-native -Dmaven.multiModuleProjectDirectory=C:\Users\HP\Desktop\UNISA\SD\SD26
+# Blackhole mode: compiler (auto-detected, use -Djmh.blackhole.autoDetect=false to disable)
+# Warmup: 3 iterations, 1 s each
+# Measurement: 5 iterations, 1 s each
+# Timeout: 10 min per iteration
+# Threads: 1 thread, will synchronize iterations
+# Benchmark mode: Throughput, ops/time
+# Benchmark: com.sd26.encoder.benchmark.CodecBenchmark.decodeHex_largeInput
+
+# Run progress: 12,50% complete, ETA 00:02:49
+# Fork: N/A, test runs in the host VM
+# *** WARNING: Non-forked runs may silently omit JVM options, mess up profilers, disable compiler hints, etc. ***
+# *** WARNING: Use non-forked runs only for debugging purposes, not for actual performance runs. ***
+# Warmup Iteration   1: 21,461 ops/ms
+# Warmup Iteration   2: 14,753 ops/ms
+# Warmup Iteration   3: 10,962 ops/ms
+Iteration   1: 9,470 ops/ms
+Iteration   2: 19,465 ops/ms
+Iteration   3: 23,886 ops/ms
+Iteration   4: 24,605 ops/ms
+Iteration   5: 23,190 ops/ms
+
+Result "com.sd26.encoder.benchmark.CodecBenchmark.decodeHex_largeInput":
+  20,123 ±(99.9%) 24,167 ops/ms [Average]
+  (min, avg, max) = (9,470, 20,123, 24,605), stdev = 6,276
+  CI (99.9%): [≈ 0, 44,290] (assumes normal distribution)
+
+
+# JMH version: 1.37
+# VM version: JDK 25.0.1, OpenJDK 64-Bit Server VM, 25.0.1+8-LTS
+# VM invoker: C:\Program Files\Eclipse Adoptium\jdk-25.0.1.8-hotspot\bin\java.exe
+# VM options: --enable-native-access=ALL-UNNAMED -Dclassworlds.conf=C:\Users\HP\AppData\Roaming\Code\User\globalStorage\pleiades.java-extension-pack-jdk\maven\latest\bin\m2.conf -Dmaven.home=C:\Users\HP\AppData\Roaming\Code\User\globalStorage\pleiades.java-extension-pack-jdk\maven\latest -Dlibrary.jansi.path=C:\Users\HP\AppData\Roaming\Code\User\globalStorage\pleiades.java-extension-pack-jdk\maven\latest\lib\jansi-native -Dmaven.multiModuleProjectDirectory=C:\Users\HP\Desktop\UNISA\SD\SD26
+# Blackhole mode: compiler (auto-detected, use -Djmh.blackhole.autoDetect=false to disable)
+# Warmup: 3 iterations, 1 s each
+# Measurement: 5 iterations, 1 s each
+# Timeout: 10 min per iteration
+# Threads: 1 thread, will synchronize iterations
+# Benchmark mode: Throughput, ops/time
+# Benchmark: com.sd26.encoder.benchmark.CodecBenchmark.decodeHex_mediumInput
+
+# Run progress: 16,67% complete, ETA 00:02:40
+# Fork: N/A, test runs in the host VM
+# *** WARNING: Non-forked runs may silently omit JVM options, mess up profilers, disable compiler hints, etc. ***
+# *** WARNING: Use non-forked runs only for debugging purposes, not for actual performance runs. ***
+# Warmup Iteration   1: 1238,865 ops/ms
+# Warmup Iteration   2: 1169,678 ops/ms
+# Warmup Iteration   3: 1439,941 ops/ms
+Iteration   1: 1372,566 ops/ms
+Iteration   2: 1447,600 ops/ms
+Iteration   3: 1534,304 ops/ms
+Iteration   4: 1485,530 ops/ms
+Iteration   5: 1185,692 ops/ms
+
+Result "com.sd26.encoder.benchmark.CodecBenchmark.decodeHex_mediumInput":
+  1405,138 ±(99.9%) 524,335 ops/ms [Average]
+  (min, avg, max) = (1185,692, 1405,138, 1534,304), stdev = 136,168
+  CI (99.9%): [880,804, 1929,473] (assumes normal distribution)
+
+
+# JMH version: 1.37
+# VM version: JDK 25.0.1, OpenJDK 64-Bit Server VM, 25.0.1+8-LTS
+# VM invoker: C:\Program Files\Eclipse Adoptium\jdk-25.0.1.8-hotspot\bin\java.exe
+# VM options: --enable-native-access=ALL-UNNAMED -Dclassworlds.conf=C:\Users\HP\AppData\Roaming\Code\User\globalStorage\pleiades.java-extension-pack-jdk\maven\latest\bin\m2.conf -Dmaven.home=C:\Users\HP\AppData\Roaming\Code\User\globalStorage\pleiades.java-extension-pack-jdk\maven\latest -Dlibrary.jansi.path=C:\Users\HP\AppData\Roaming\Code\User\globalStorage\pleiades.java-extension-pack-jdk\maven\latest\lib\jansi-native -Dmaven.multiModuleProjectDirectory=C:\Users\HP\Desktop\UNISA\SD\SD26
+# Blackhole mode: compiler (auto-detected, use -Djmh.blackhole.autoDetect=false to disable)
+# Warmup: 3 iterations, 1 s each
+# Measurement: 5 iterations, 1 s each
+# Timeout: 10 min per iteration
+# Threads: 1 thread, will synchronize iterations
+# Benchmark mode: Throughput, ops/time
+# Benchmark: com.sd26.encoder.benchmark.CodecBenchmark.decodeHex_smallInput
+
+# Run progress: 20,83% complete, ETA 00:02:32
+# Fork: N/A, test runs in the host VM
+# *** WARNING: Non-forked runs may silently omit JVM options, mess up profilers, disable compiler hints, etc. ***
+# *** WARNING: Use non-forked runs only for debugging purposes, not for actual performance runs. ***
+# Warmup Iteration   1: 6173,777 ops/ms
+# Warmup Iteration   2: 5440,154 ops/ms
+# Warmup Iteration   3: 4354,894 ops/ms
+Iteration   1: 4847,009 ops/ms
+Iteration   2: 5556,452 ops/ms
+Iteration   3: 5345,908 ops/ms
+Iteration   4: 6501,666 ops/ms
+Iteration   5: 11010,190 ops/ms
+
+Result "com.sd26.encoder.benchmark.CodecBenchmark.decodeHex_smallInput":
+  6652,245 ±(99.9%) 9661,303 ops/ms [Average]
+  (min, avg, max) = (4847,009, 6652,245, 11010,190), stdev = 2509,010
+  CI (99.9%): [≈ 0, 16313,548] (assumes normal distribution)
+
+
+# JMH version: 1.37
+# VM version: JDK 25.0.1, OpenJDK 64-Bit Server VM, 25.0.1+8-LTS
+# VM invoker: C:\Program Files\Eclipse Adoptium\jdk-25.0.1.8-hotspot\bin\java.exe
+# VM options: --enable-native-access=ALL-UNNAMED -Dclassworlds.conf=C:\Users\HP\AppData\Roaming\Code\User\globalStorage\pleiades.java-extension-pack-jdk\maven\latest\bin\m2.conf -Dmaven.home=C:\Users\HP\AppData\Roaming\Code\User\globalStorage\pleiades.java-extension-pack-jdk\maven\latest -Dlibrary.jansi.path=C:\Users\HP\AppData\Roaming\Code\User\globalStorage\pleiades.java-extension-pack-jdk\maven\latest\lib\jansi-native -Dmaven.multiModuleProjectDirectory=C:\Users\HP\Desktop\UNISA\SD\SD26
+# Blackhole mode: compiler (auto-detected, use -Djmh.blackhole.autoDetect=false to disable)
+# Warmup: 3 iterations, 1 s each
+# Measurement: 5 iterations, 1 s each
+# Timeout: 10 min per iteration
+# Threads: 1 thread, will synchronize iterations
+# Benchmark mode: Throughput, ops/time
+# Benchmark: com.sd26.encoder.benchmark.CodecBenchmark.encodeBase64_largeInput
+
+# Run progress: 25,00% complete, ETA 00:02:24
+# Fork: N/A, test runs in the host VM
+# *** WARNING: Non-forked runs may silently omit JVM options, mess up profilers, disable compiler hints, etc. ***
+# *** WARNING: Use non-forked runs only for debugging purposes, not for actual performance runs. ***
+# Warmup Iteration   1: 16,205 ops/ms
+# Warmup Iteration   2: 14,873 ops/ms
+# Warmup Iteration   3: 14,221 ops/ms
+Iteration   1: 16,253 ops/ms
+Iteration   2: 14,714 ops/ms
+Iteration   3: 11,679 ops/ms
+Iteration   4: 15,215 ops/ms
+Iteration   5: 15,447 ops/ms
+
+Result "com.sd26.encoder.benchmark.CodecBenchmark.encodeBase64_largeInput":
+  14,662 ±(99.9%) 6,768 ops/ms [Average]
+  (min, avg, max) = (11,679, 14,662, 16,253), stdev = 1,758
+  CI (99.9%): [7,893, 21,430] (assumes normal distribution)
+
+
+# JMH version: 1.37
+# VM version: JDK 25.0.1, OpenJDK 64-Bit Server VM, 25.0.1+8-LTS
+# VM invoker: C:\Program Files\Eclipse Adoptium\jdk-25.0.1.8-hotspot\bin\java.exe
+# VM options: --enable-native-access=ALL-UNNAMED -Dclassworlds.conf=C:\Users\HP\AppData\Roaming\Code\User\globalStorage\pleiades.java-extension-pack-jdk\maven\latest\bin\m2.conf -Dmaven.home=C:\Users\HP\AppData\Roaming\Code\User\globalStorage\pleiades.java-extension-pack-jdk\maven\latest -Dlibrary.jansi.path=C:\Users\HP\AppData\Roaming\Code\User\globalStorage\pleiades.java-extension-pack-jdk\maven\latest\lib\jansi-native -Dmaven.multiModuleProjectDirectory=C:\Users\HP\Desktop\UNISA\SD\SD26
+# Blackhole mode: compiler (auto-detected, use -Djmh.blackhole.autoDetect=false to disable)
+# Warmup: 3 iterations, 1 s each
+# Measurement: 5 iterations, 1 s each
+# Timeout: 10 min per iteration
+# Threads: 1 thread, will synchronize iterations
+# Benchmark mode: Throughput, ops/time
+# Benchmark: com.sd26.encoder.benchmark.CodecBenchmark.encodeBase64_mediumInput
+
+# Run progress: 29,17% complete, ETA 00:02:16
+# Fork: N/A, test runs in the host VM
+# *** WARNING: Non-forked runs may silently omit JVM options, mess up profilers, disable compiler hints, etc. ***
+# *** WARNING: Use non-forked runs only for debugging purposes, not for actual performance runs. ***
+# Warmup Iteration   1: 547,112 ops/ms
+# Warmup Iteration   2: 600,549 ops/ms
+# Warmup Iteration   3: 483,036 ops/ms
+Iteration   1: 462,669 ops/ms
+Iteration   2: 324,840 ops/ms
+Iteration   3: 336,881 ops/ms
+Iteration   4: 401,987 ops/ms
+Iteration   5: 505,946 ops/ms
+
+Result "com.sd26.encoder.benchmark.CodecBenchmark.encodeBase64_mediumInput":
+  406,465 ±(99.9%) 301,853 ops/ms [Average]
+  (min, avg, max) = (324,840, 406,465, 505,946), stdev = 78,390
+  CI (99.9%): [104,612, 708,318] (assumes normal distribution)
+
+
+# JMH version: 1.37
+# VM version: JDK 25.0.1, OpenJDK 64-Bit Server VM, 25.0.1+8-LTS
+# VM invoker: C:\Program Files\Eclipse Adoptium\jdk-25.0.1.8-hotspot\bin\java.exe
+# VM options: --enable-native-access=ALL-UNNAMED -Dclassworlds.conf=C:\Users\HP\AppData\Roaming\Code\User\globalStorage\pleiades.java-extension-pack-jdk\maven\latest\bin\m2.conf -Dmaven.home=C:\Users\HP\AppData\Roaming\Code\User\globalStorage\pleiades.java-extension-pack-jdk\maven\latest -Dlibrary.jansi.path=C:\Users\HP\AppData\Roaming\Code\User\globalStorage\pleiades.java-extension-pack-jdk\maven\latest\lib\jansi-native -Dmaven.multiModuleProjectDirectory=C:\Users\HP\Desktop\UNISA\SD\SD26
+# Blackhole mode: compiler (auto-detected, use -Djmh.blackhole.autoDetect=false to disable)
+# Warmup: 3 iterations, 1 s each
+# Measurement: 5 iterations, 1 s each
+# Timeout: 10 min per iteration
+# Threads: 1 thread, will synchronize iterations
+# Benchmark mode: Throughput, ops/time
+# Benchmark: com.sd26.encoder.benchmark.CodecBenchmark.encodeBase64_smallInput
+
+# Run progress: 33,33% complete, ETA 00:02:08
+# Fork: N/A, test runs in the host VM
+# *** WARNING: Non-forked runs may silently omit JVM options, mess up profilers, disable compiler hints, etc. ***
+# *** WARNING: Use non-forked runs only for debugging purposes, not for actual performance runs. ***
+# Warmup Iteration   1: 1127,362 ops/ms
+# Warmup Iteration   2: 1148,351 ops/ms
+# Warmup Iteration   3: 963,899 ops/ms
+Iteration   1: 621,150 ops/ms
+Iteration   2: 705,823 ops/ms
+Iteration   3: 717,338 ops/ms
+Iteration   4: 712,609 ops/ms
+Iteration   5: 795,981 ops/ms
+
+Result "com.sd26.encoder.benchmark.CodecBenchmark.encodeBase64_smallInput":
+  710,580 ±(99.9%) 238,643 ops/ms [Average]
+  (min, avg, max) = (621,150, 710,580, 795,981), stdev = 61,975
+  CI (99.9%): [471,937, 949,223] (assumes normal distribution)
+
+
+# JMH version: 1.37
+# VM version: JDK 25.0.1, OpenJDK 64-Bit Server VM, 25.0.1+8-LTS
+# VM invoker: C:\Program Files\Eclipse Adoptium\jdk-25.0.1.8-hotspot\bin\java.exe
+# VM options: --enable-native-access=ALL-UNNAMED -Dclassworlds.conf=C:\Users\HP\AppData\Roaming\Code\User\globalStorage\pleiades.java-extension-pack-jdk\maven\latest\bin\m2.conf -Dmaven.home=C:\Users\HP\AppData\Roaming\Code\User\globalStorage\pleiades.java-extension-pack-jdk\maven\latest -Dlibrary.jansi.path=C:\Users\HP\AppData\Roaming\Code\User\globalStorage\pleiades.java-extension-pack-jdk\maven\latest\lib\jansi-native -Dmaven.multiModuleProjectDirectory=C:\Users\HP\Desktop\UNISA\SD\SD26
+# Blackhole mode: compiler (auto-detected, use -Djmh.blackhole.autoDetect=false to disable)
+# Warmup: 3 iterations, 1 s each
+# Measurement: 5 iterations, 1 s each
+# Timeout: 10 min per iteration
+# Threads: 1 thread, will synchronize iterations
+# Benchmark mode: Throughput, ops/time
+# Benchmark: com.sd26.encoder.benchmark.CodecBenchmark.encodeHex_largeInput
+
+# Run progress: 37,50% complete, ETA 00:02:00
+# Fork: N/A, test runs in the host VM
+# *** WARNING: Non-forked runs may silently omit JVM options, mess up profilers, disable compiler hints, etc. ***
+# *** WARNING: Use non-forked runs only for debugging purposes, not for actual performance runs. ***
+# Warmup Iteration   1: 22,862 ops/ms
+# Warmup Iteration   2: 21,503 ops/ms
+# Warmup Iteration   3: 22,423 ops/ms
+Iteration   1: 27,620 ops/ms
+Iteration   2: 22,932 ops/ms
+Iteration   3: 24,688 ops/ms
+Iteration   4: 22,224 ops/ms
+Iteration   5: 20,826 ops/ms
+
+Result "com.sd26.encoder.benchmark.CodecBenchmark.encodeHex_largeInput":
+  23,658 ±(99.9%) 10,071 ops/ms [Average]
+  (min, avg, max) = (20,826, 23,658, 27,620), stdev = 2,615
+  CI (99.9%): [13,586, 33,729] (assumes normal distribution)
+
+
+# JMH version: 1.37
+# VM version: JDK 25.0.1, OpenJDK 64-Bit Server VM, 25.0.1+8-LTS
+# VM invoker: C:\Program Files\Eclipse Adoptium\jdk-25.0.1.8-hotspot\bin\java.exe
+# VM options: --enable-native-access=ALL-UNNAMED -Dclassworlds.conf=C:\Users\HP\AppData\Roaming\Code\User\globalStorage\pleiades.java-extension-pack-jdk\maven\latest\bin\m2.conf -Dmaven.home=C:\Users\HP\AppData\Roaming\Code\User\globalStorage\pleiades.java-extension-pack-jdk\maven\latest -Dlibrary.jansi.path=C:\Users\HP\AppData\Roaming\Code\User\globalStorage\pleiades.java-extension-pack-jdk\maven\latest\lib\jansi-native -Dmaven.multiModuleProjectDirectory=C:\Users\HP\Desktop\UNISA\SD\SD26
+# Blackhole mode: compiler (auto-detected, use -Djmh.blackhole.autoDetect=false to disable)
+# Warmup: 3 iterations, 1 s each
+# Measurement: 5 iterations, 1 s each
+# Timeout: 10 min per iteration
+# Threads: 1 thread, will synchronize iterations
+# Benchmark mode: Throughput, ops/time
+# Benchmark: com.sd26.encoder.benchmark.CodecBenchmark.encodeHex_mediumInput
+
+# Run progress: 41,67% complete, ETA 00:01:52
+# Fork: N/A, test runs in the host VM
+# *** WARNING: Non-forked runs may silently omit JVM options, mess up profilers, disable compiler hints, etc. ***
+# *** WARNING: Use non-forked runs only for debugging purposes, not for actual performance runs. ***
+# Warmup Iteration   1: 1392,623 ops/ms
+# Warmup Iteration   2: 1861,771 ops/ms
+# Warmup Iteration   3: 2062,325 ops/ms
+Iteration   1: 2547,782 ops/ms
+Iteration   2: 1343,043 ops/ms
+Iteration   3: 2694,649 ops/ms
+Iteration   4: 3471,878 ops/ms
+Iteration   5: 3459,045 ops/ms
+
+Result "com.sd26.encoder.benchmark.CodecBenchmark.encodeHex_mediumInput":
+  2703,279 ±(99.9%) 3354,938 ops/ms [Average]
+  (min, avg, max) = (1343,043, 2703,279, 3471,878), stdev = 871,267
+  CI (99.9%): [≈ 0, 6058,217] (assumes normal distribution)
+
+
+# JMH version: 1.37
+# VM version: JDK 25.0.1, OpenJDK 64-Bit Server VM, 25.0.1+8-LTS
+# VM invoker: C:\Program Files\Eclipse Adoptium\jdk-25.0.1.8-hotspot\bin\java.exe
+# VM options: --enable-native-access=ALL-UNNAMED -Dclassworlds.conf=C:\Users\HP\AppData\Roaming\Code\User\globalStorage\pleiades.java-extension-pack-jdk\maven\latest\bin\m2.conf -Dmaven.home=C:\Users\HP\AppData\Roaming\Code\User\globalStorage\pleiades.java-extension-pack-jdk\maven\latest -Dlibrary.jansi.path=C:\Users\HP\AppData\Roaming\Code\User\globalStorage\pleiades.java-extension-pack-jdk\maven\latest\lib\jansi-native -Dmaven.multiModuleProjectDirectory=C:\Users\HP\Desktop\UNISA\SD\SD26
+# Blackhole mode: compiler (auto-detected, use -Djmh.blackhole.autoDetect=false to disable)
+# Warmup: 3 iterations, 1 s each
+# Measurement: 5 iterations, 1 s each
+# Timeout: 10 min per iteration
+# Threads: 1 thread, will synchronize iterations
+# Benchmark mode: Throughput, ops/time
+# Benchmark: com.sd26.encoder.benchmark.CodecBenchmark.encodeHex_smallInput
+
+# Run progress: 45,83% complete, ETA 00:01:44
+# Fork: N/A, test runs in the host VM
+# *** WARNING: Non-forked runs may silently omit JVM options, mess up profilers, disable compiler hints, etc. ***
+# *** WARNING: Use non-forked runs only for debugging purposes, not for actual performance runs. ***
+# Warmup Iteration   1: 14650,459 ops/ms
+# Warmup Iteration   2: 10395,887 ops/ms
+# Warmup Iteration   3: 16611,349 ops/ms
+Iteration   1: 14988,891 ops/ms
+Iteration   2: 12948,571 ops/ms
+Iteration   3: 16136,992 ops/ms
+Iteration   4: 15923,149 ops/ms
+Iteration   5: 17033,667 ops/ms
+
+Result "com.sd26.encoder.benchmark.CodecBenchmark.encodeHex_smallInput":
+  15406,254 ±(99.9%) 5985,253 ops/ms [Average]
+  (min, avg, max) = (12948,571, 15406,254, 17033,667), stdev = 1554,351
+  CI (99.9%): [9421,001, 21391,507] (assumes normal distribution)
+
+
+# Run complete. Total time: 00:01:36
+
+REMEMBER: The numbers below are just data. To gain reusable insights, you need to follow up on
+why the numbers are the way they are. Use profilers (see -prof, -lprof), design factorial
+experiments, perform baseline and negative tests that provide experimental control, make sure
+the benchmarking environment is safe on JVM/OS/HW level, ask for reviews from the domain experts.
+Do not assume the numbers tell you what you want them to tell.
+
+NOTE: Current JVM experimentally supports Compiler Blackholes, and they are in use. Please exercise
+extra caution when trusting the results, look into the generated code to check the benchmark still
+works, and factor in a small probability of new VM bugs. Additionally, while comparisons between
+different JVMs are already problematic, the performance difference caused by different Blackhole
+modes can be very significant. Please make sure you use the consistent Blackhole mode for comparisons.
+
+Benchmark                                 Mode  Cnt      Score      Error   Units
+CodecBenchmark.decodeBase64_largeInput   thrpt    5     10,184 ±    6,577  ops/ms
+CodecBenchmark.decodeBase64_mediumInput  thrpt    5    196,179 ±  294,584  ops/ms
+CodecBenchmark.decodeBase64_smallInput   thrpt    5    969,399 ±  282,344  ops/ms
+CodecBenchmark.decodeHex_largeInput      thrpt    5     20,123 ±   24,167  ops/ms
+CodecBenchmark.decodeHex_mediumInput     thrpt    5   1405,138 ±  524,335  ops/ms
+CodecBenchmark.decodeHex_smallInput      thrpt    5   6652,245 ± 9661,303  ops/ms
+CodecBenchmark.encodeBase64_largeInput   thrpt    5     14,662 ±    6,768  ops/ms
+CodecBenchmark.encodeBase64_mediumInput  thrpt    5    406,465 ±  301,853  ops/ms
+CodecBenchmark.encodeBase64_smallInput   thrpt    5    710,580 ±  238,643  ops/ms
+CodecBenchmark.encodeHex_largeInput      thrpt    5     23,658 ±   10,071  ops/ms
+CodecBenchmark.encodeHex_mediumInput     thrpt    5   2703,279 ± 3354,938  ops/ms
+CodecBenchmark.encodeHex_smallInput      thrpt    5  15406,254 ± 5985,253  ops/ms
+
+Benchmark result is saved to target/jmh-results.json
+[INFO] ------------------------------------------------------------------------
+[INFO] BUILD SUCCESS
+[INFO] ------------------------------------------------------------------------
+[INFO] Total time:  01:40 min
+[INFO] Finished at: 2026-06-27T21:23:42+02:00
+[INFO] ------------------------------------------------------------------------
