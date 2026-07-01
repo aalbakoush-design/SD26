@@ -109,8 +109,9 @@ jobs:
       - name: Build with SonarCloud analysis
         env:
           SONAR_TOKEN: ${{ secrets.SONAR_TOKEN }}
-        run: mvn clean verify sonar:sonar -DskipTests -Djacoco.skip=true \
-          -Dsonar.projectKey=aalbakoush-design_SD26 \
-          -Dsonar.organization=aalbakoush-design \
-          -Dsonar.host.url=https://sonarcloud.io \
+        run: >-
+          mvn clean verify sonar:sonar -DskipTests -Djacoco.skip=true
+          -Dsonar.projectKey=aalbakoush-design_SD26
+          -Dsonar.organization=aalbakoush-design
+          -Dsonar.host.url=https://sonarcloud.io
           -Dsonar.java.binaries=target/classes
