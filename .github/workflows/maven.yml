@@ -39,3 +39,78 @@ jobs:
       with:
         name: sd26-encoder-jar
         path: target/sd26-encoder.jar
+
+  # ====================================================
+  # Snyk Security Scan
+  # ====================================================
+  snyk-security-scan:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      
+      - name: Set up JDK 21
+        uses: actions/setup-java@v4
+        with:
+          java-version: '21'
+          distribution: 'temurin'
+          cache: 'maven'
+      
+      - name: Build JAR for Snyk
+        run: mvn clean package -DskipTests -Djacoco.skip=true
+      
+      - name: Snyk Security Scan
+        uses: snyk/actions/maven@master
+        continue-on-error: true
+        env:
+          SNYK_TOKEN: ${{ secrets.SNYK_TOKEN }}
+        with:
+          args: --file=pom.xml --severity-threshold=high
+
+  # ====================================================
+  # GitGuardian Scan (Secrets Detection)
+  # ====================================================
+  gitguardian-scan:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+      
+      - name: GitGuardian Scan
+        uses: GitGuardian/ggshield-action@master
+        continue-on-error: true
+        env:
+          GITGUARDIAN_API_KEY: ${{ secrets.GITGUARDIAN_API_KEY }}
+
+  # ====================================================
+  # SonarCloud Code Quality & Security Analysis
+  # ====================================================
+  sonarcloud-analysis:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+      
+      - name: Set up JDK 21
+        uses: actions/setup-java@v4
+        with:
+          java-version: '21'
+          distribution: 'temurin'
+          cache: 'maven'
+      
+      - name: Cache SonarCloud packages
+        uses: actions/cache@v4
+        with:
+          path: ~/.sonar/cache
+          key: ${{ runner.os }}-sonar
+          restore-keys: ${{ runner.os }}-sonar
+      
+      - name: Build with SonarCloud analysis
+        env:
+          SONAR_TOKEN: ${{ secrets.SONAR_TOKEN }}
+        run: mvn clean verify sonar:sonar -DskipTests -Djacoco.skip=true \
+          -Dsonar.projectKey=aalbakoush-design_SD26 \
+          -Dsonar.organization=aalbakoush-design \
+          -Dsonar.host.url=https://sonarcloud.io \
+          -Dsonar.java.binaries=target/classes
