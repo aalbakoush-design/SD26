@@ -32,6 +32,8 @@
         <bytebuddy.version>1.15.11</bytebuddy.version>
         <mockito.version>5.14.2</mockito.version>
         <surefire.version>3.5.2</surefire.version>
+        <tomcat.version>10.1.55</tomcat.version>
+        <jackson.version>2.18.8</jackson.version>
     </properties>
 
     <dependencies>
