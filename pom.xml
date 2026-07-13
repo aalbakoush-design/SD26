@@ -34,8 +34,6 @@
         <surefire.version>3.5.2</surefire.version>
         <tomcat.version>10.1.55</tomcat.version>
         <jackson.version>2.18.8</jackson.version>
-        <logback.version>1.5.13</logback.version>
-        <spring-framework.version>6.2.1</spring-framework.version>
     </properties>
 
     <dependencies>
