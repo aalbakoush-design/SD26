@@ -41,6 +41,31 @@ jobs:
         path: target/sd26-encoder.jar
 
   # ====================================================
+  # PiTest Mutation Testing
+  # ====================================================
+  mutation-testing:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      
+      - name: Set up JDK 21
+        uses: actions/setup-java@v4
+        with:
+          java-version: '21'
+          distribution: 'temurin'
+          cache: 'maven'
+      
+      - name: Run PiTest Mutation Coverage
+        run: mvn test pitest:mutationCoverage -DtestFailureIgnore=true
+      
+      - name: Upload PiTest Report
+        uses: actions/upload-artifact@v4
+        if: always()
+        with:
+          name: pitest-report
+          path: target/pit-reports/
+
+  # ====================================================
   # Docker Build & Push to DockerHub
   # ====================================================
   docker-push:
